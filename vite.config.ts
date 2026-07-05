@@ -41,7 +41,7 @@ export default defineConfig({
         // Cache respons API terakhir supaya bisa dilihat offline (network-first)
         runtimeCaching: [
           {
-            urlPattern: ({ url }) => url.href.includes('script.google.com'),
+            urlPattern: /^https:\/\/script\.google\.com\//,
             handler: 'NetworkFirst',
             options: {
               cacheName: 'ifestopsium-api',
