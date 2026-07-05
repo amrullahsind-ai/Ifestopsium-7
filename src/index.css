@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-slate-100 text-slate-800 antialiased;
+    font-family: 'Inter', system-ui, 'Segoe UI', Roboto, sans-serif;
+    /* aman untuk notch HP */
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl bg-white shadow-sm ring-1 ring-slate-200/70;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition active:scale-95 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply btn bg-brand-600 text-white shadow-sm hover:bg-brand-700;
+  }
+  .btn-ghost {
+    @apply btn bg-slate-100 text-slate-700 hover:bg-slate-200;
+  }
+  .btn-danger {
+    @apply btn bg-red-50 text-red-600 hover:bg-red-100;
+  }
+  .input {
+    @apply w-full rounded-xl border-0 bg-slate-100 px-4 py-3 text-sm text-slate-800 ring-1 ring-inset ring-slate-200 transition placeholder:text-slate-400 focus:bg-white focus:ring-2 focus:ring-brand-500 focus:outline-none;
+  }
+  .label {
+    @apply mb-1.5 block text-xs font-semibold uppercase tracking-wide text-slate-500;
+  }
+}
+
+/* Scrollbar halus */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-slate-300;
+}
